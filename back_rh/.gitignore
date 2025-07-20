@@ -1,0 +1,37 @@
+# ==== FRONTEND (React / Vite / Node.js) ====
+node_modules/
+dist/
+build/
+.vite/
+*.log
+*.lock
+*.cache
+.env
+.env.local
+
+# === BACKEND (Django / Python) ====
+__pycache__/
+*.py[cod]
+*.sqlite3
+*.log
+db.sqlite3
+media/
+staticfiles/
+.env
+.env.*
+
+# === ENVIRONNEMENTS VIRTUELS ===
+env/
+venv/
+.venv/
+
+# === SYSTEME D'EXPLOITATION ===
+.DS_Store
+Thumbs.db
+
+# === IDEs ===
+.vscode/
+.idea/
+
+# === GIT ===
+*.orig

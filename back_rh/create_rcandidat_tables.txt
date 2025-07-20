@@ -1,0 +1,29 @@
+-- Création de la base de données
+CREATE DATABASE rcandidat;
+
+-- Connexion à la base (selon l'outil que vous utilisez, à exécuter séparément)
+\c rcandidat;
+
+-- Table : candidats
+CREATE TABLE candidats (
+    id SERIAL PRIMARY KEY,
+    nom TEXT NOT NULL,
+    cv_url TEXT NOT NULL,
+    date_depot DATE NOT NULL DEFAULT CURRENT_DATE
+);
+
+-- Table : evaluations
+CREATE TABLE evaluations (
+    id SERIAL PRIMARY KEY,
+    candidat_id INTEGER NOT NULL,
+    score_final DOUBLE PRECISION NOT NULL,
+    justificatifs TEXT NOT NULL,
+    date_evaluation TIMESTAMP WITHOUT TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Ajout de la clé étrangère
+ALTER TABLE evaluations
+ADD CONSTRAINT fk_candidat
+FOREIGN KEY (candidat_id)
+REFERENCES candidats(id)
+ON DELETE CASCADE;
