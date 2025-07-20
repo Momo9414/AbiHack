@@ -1,11 +1,14 @@
-# ==== FRONTEND (React / Vite / Node.js) ====
+# ==== FRONTEND (React / Vite / Node.js / Next.js / TypeScript) ====
 node_modules/
 dist/
 build/
 .vite/
+.next/
+out/
+.cache/
 *.log
 *.lock
-*.cache
+*.tsbuildinfo
 .env
 .env.local
 
@@ -19,6 +22,8 @@ media/
 staticfiles/
 .env
 .env.*
+**/migrations/*.py
+!**/migrations/__init__.py
 
 # === ENVIRONNEMENTS VIRTUELS ===
 env/
@@ -35,3 +40,5 @@ Thumbs.db
 
 # === GIT ===
 *.orig
+*.rej
+*.swp
